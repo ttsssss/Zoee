@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/instructions.css';
 import '../App.css'
 
 const Home = () => {
@@ -45,15 +46,15 @@ const Home = () => {
                 <div className="section">
                     <h5 className="section-title">Part 2: Complete the contacts page</h5>
                     <p>
-                        On the contacts component, we want to show a list of clients so our coach can easily see and get in touch with them. For the purposes of the challenge, you can use <a href="https://random-data-api.com/documentation" className='api-link'>THIS</a> random user generator api to get a list of fake clients. In the documentation you'll see an endpoint for "Users". This is the one you should use!
+                        On the contacts component, we want to show a list of clients so our coach can easily see and get in touch with them. For the purposes of the challenge, you can use <a href="https://random-data-api.com/documentation" target="_blank" className='api-link' rel="noreferrer">THIS</a> random user generator api to get a list of fake clients. In the documentation you'll see an endpoint for "Users". This is the one you should use!
                     </p>
                     <ol>
-                        <li>Using fetch or the HTTP client of your choosing, retrieve a list of 20 randomly generated users from the API and use a state variable to store them in the ‘Contacts’ component.</li>
+                        <li>Using fetch or the HTTP client of your choosing, retrieve a list of 20 users from the API and use a state variable to store them in the ‘Contacts’ component.</li>
                         <li>Add the ‘Search for contact’ field, along with the ‘New Contact’ button.</li>
                         <li>Display the list of contacts as you see them in the ‘Contacts’ Figma design. The card should show the contact’s first name, last name, email address, and image.</li>
-                        <li>Enable filtering the contacts list using the search field you created before. The user should be able to search by the contact’s first or last name.</li>
                         <li>Display the ‘New Contact’ modal when clicking the ‘New Contact’ button.</li>
                         <li>Enable the new contact form so that the user can add a new contact with a first name, last name, and email address. Since your new contact won’t have an image for their contact card, you can display a colored circle containing their first initial where the image would normally go.</li>
+                        <li>Add a hover effect to the contact cards. See the Figma board for this design!</li>
                     </ol>
                 </div>
                 <div className="section">
@@ -62,8 +63,8 @@ const Home = () => {
                         If you finished parts one and two and still have time remaining, you can give the additional tasks below a try.
                     </p>
                     <ol>
+                        <li>Enable filtering the contacts list using the search field you created before. The user should be able to search by the contact’s first or last name.</li>
                         <li>Add error handling to the new contact form. If any of the fields are empty, stop the form from submitting, display an error message, and outline the missing fields in red. Check the bonus Figma board for the designs for this! If you want to get fancier, you can add a check to make sure the email is in a valid format.</li>
-                        <li>Add a hover effect to the contact cards. See the bonus Figma board for this design!</li>
                         <li>Allow the user to delete contacts from the list. There's no figma design for a delete button, so be creative with this one!</li>
                     </ol>
                 </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/navigation.css';
 import zoee from '../assets/images/logos.svg';
 import notifications from '../assets/images/notifications.svg';
 import { Link } from 'react-router-dom';

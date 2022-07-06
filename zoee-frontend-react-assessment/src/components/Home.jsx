@@ -27,7 +27,7 @@ const Home = () => {
                         That being said, it's also completely ok not to use any packages.
                     </li>
                     <li>
-                        There is an empty 'styles' folder provided where you can add as many new stylesheets as you'd like. If desired you can add your styles to the existing App.css sheet as well. Up to you.
+                        There is a 'styles' folder provided where you can add as many new stylesheets as you'd like. If desired you can add your styles to the existing App.css sheet as well. Up to you.
                     </li>
                 </ul>
                 <div className="good-luck">Best of luck!!!</div>

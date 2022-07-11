@@ -15,7 +15,7 @@ const Home = () => {
                 </p>
                 <ul>
                     <li>
-                    Remember to refer to the figma designs you were provided and do the best you can to match the features you create
+                    Use the figma files <a target="_blank" href="https://www.figma.com/files/project/60851741/Frontend-Dev-Challenge?fuid=1090284691689012784" rel="noreferrer">HERE</a> and do the best you can to match the features you create
                     to those designs.
                     </li>
                     <li>

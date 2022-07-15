@@ -10,6 +10,7 @@ import Home from './components/Home';
 import Contacts from './components/Contacts';
 import userData from './data/user';
 
+
 const App = () => {
   const [user, setUser] = useState({});
 

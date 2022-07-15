@@ -1,13 +1,13 @@
-import React from 'react';
-import '../App.css'
+import React from "react";
+import "../App.css";
+import Button from "react-bootstrap/Button";
 
-const Contacts = () => {
-
-    return (
-        <div className="container">
-            Contacts
-        </div>
-    );
+function Contacts() {
+  return (
+    <div className="userButton">
+      <Button variant="primary">Primary</Button>
+    </div>
+  );
 }
 
 export default Contacts;

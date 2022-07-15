@@ -58,3 +58,11 @@ a {
   order: 1;
   flex-grow: 0;
 }
+
+/* .isActive {
+
+} */
+ui.search {
+  margin-top: 50px;
+  text-align: center;
+}

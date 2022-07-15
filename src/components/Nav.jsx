@@ -3,6 +3,7 @@ import '../styles/navigation.css';
 import zoee from '../assets/images/logos.svg';
 import notifications from '../assets/images/notifications.svg';
 import { Link } from 'react-router-dom';
+// import Contacts from './Contacts';
 
 const Nav = () => {
     return(
@@ -10,8 +11,8 @@ const Nav = () => {
             <div className="nav-inner">
                 <img src={zoee} alt="" />
                 <div className="nav-items">
-                    <Link to="#">Home</Link>
-                    <Link to="#">Contacts</Link>
+                    <Link to="/">Home</Link>
+                    <Link to="Contacts">Contacts</Link>
                 </div>
                 <div className='nav-right'>
                     <img src={notifications} alt="notifications" />

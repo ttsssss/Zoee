@@ -1,12 +1,14 @@
 import React from "react";
 import "../App.css";
-import Button from "react-bootstrap/Button";
+import { Button } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 function Contacts() {
   return (
-    <div className="userButton">
-      <Button variant="primary">Primary</Button>
-    </div>
+    <Button type="button" class="btn btn-primary">
+      New User
+    </Button>
   );
 }
 

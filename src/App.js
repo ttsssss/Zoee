@@ -1,5 +1,7 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React
+// { useState, useEffect } 
+from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -8,15 +10,15 @@ import {
 import Nav from './components/Nav';
 import Home from './components/Home';
 import Contacts from './components/Contacts';
-import userData from './data/user';
+// import userData from './data/user';
 
 
 const App = () => {
-  const [user, setUser] = useState({});
+  // const [user, setUser] = useState({});
 
-  useEffect(() => {
-    setUser(userData)
-  }, [])
+  // useEffect(() => {
+  //   setUser(userData)
+  // }, [])
 
   return (
     <Router>

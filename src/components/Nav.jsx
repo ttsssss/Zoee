@@ -15,6 +15,7 @@ const Nav = () => {
                 </div>
                 <div className='nav-right'>
                     <img src={notifications} alt="notifications" />
+                    <a href="#"><i class="icon"></i></a>
                 </div>
             </div>
         </div>

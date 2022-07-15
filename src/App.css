@@ -5,7 +5,7 @@ body {
 .App {
   position: relative;
   width: 100%;
-  font-family: 'BeausiteClassic';
+  font-family: "BeausiteClassic";
 }
 
 .container {
@@ -19,27 +19,37 @@ body {
 /* fonts */
 
 @font-face {
-  font-family: 'BeausiteClassic';
-  src: url('./assets/fonts/BeausiteClassicWeb-Regular.woff2') format('woff2'),
-  url('./assets/fonts/BeausiteClassicWeb-Regular.woff') format('woff'); 
+  font-family: "BeausiteClassic";
+  src: url("./assets/fonts/BeausiteClassicWeb-Regular.woff2") format("woff2"),
+    url("./assets/fonts/BeausiteClassicWeb-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'BeausiteClassic';
-  src: url('./assets/fonts/BeausiteClassicWeb-Bold.woff2') format('woff2'),
-  url('./assets/fonts/BeausiteClassicWeb-Bold.woff') format('woff'); 
+  font-family: "BeausiteClassic";
+  src: url("./assets/fonts/BeausiteClassicWeb-Bold.woff2") format("woff2"),
+    url("./assets/fonts/BeausiteClassicWeb-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
-} 
+}
 @font-face {
-  font-family: 'BeausiteClassic';
-  src: url('./assets/fonts/BeausiteClassicWeb-RegularItalic.woff2') format('woff2'),
-  url('./assets/fonts/BeausiteClassicWeb-RegularItalic.woff') format('woff'); 
+  font-family: "BeausiteClassic";
+  src: url("./assets/fonts/BeausiteClassicWeb-RegularItalic.woff2")
+      format("woff2"),
+    url("./assets/fonts/BeausiteClassicWeb-RegularItalic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
 }
 
-.userButton {
+.container1 {
   display: flex;
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+}
+
+.container2 {
+  display: flex;
+  margin-left:90%;
 }

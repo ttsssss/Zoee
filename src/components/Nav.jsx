@@ -3,7 +3,7 @@ import "../styles/navigation.css";
 import zoee from "../assets/images/logos.svg";
 import notifications from "../assets/images/notifications.svg";
 import { Link, NavLink } from "react-router-dom";
-// import Contacts from './Contacts';
+import Contacts from './Contacts';
 
 const Nav = () => {
   let activeStyle = {

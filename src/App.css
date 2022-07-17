@@ -41,15 +41,44 @@ body {
   font-style: italic;
 }
 
-.container1 {
+.card {
   display: flex;
-  width: 100%;
-  padding-top: 100px;
-  padding-bottom: 100px;
-
+  justify-content: flex-end;
+  margin-top: 5%;
+  padding: 2rem;
 }
 
-.container2 {
-  display: flex;
-  margin-left:90%;
+.searchbox {
+  margin-right: 10px;
 }
+.btn-color {
+  background-color: #3395ff !important;
+}
+.contact-search {
+  border-radius: 100px !important;
+}
+
+.dialogModal {
+  text-align: center !important;
+}
+
+.text-input {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-input2 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px !important;
+}
+
+.create-btn {
+  display: flex;
+  margin-left: 82% !important;
+  margin-top: 25px !important;
+}
+
+/* @media all and (max-width: 500px) {
+
+} */

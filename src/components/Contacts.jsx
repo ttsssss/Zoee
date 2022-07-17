@@ -43,7 +43,7 @@ const Contacts = () => {
   };
   return (
     <>
-     <Card>{users}</Card>
+     {/* <Card>{users}</Card> */}
 
       <div className="card">
         <div className="p-fluid grid">

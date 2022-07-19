@@ -6,27 +6,36 @@ import "primereact/resources/primereact.min.css"; //core css
 import "primeicons/primeicons.css"; //icons
 import { Button } from "primereact/button";
 import { Dialog } from "primereact/dialog"; //same thing as a modal
-import { Card } from "primereact/card";
+// import { Card } from "primereact/card";
 
-const Contacts = () => {
+const Carp = (props) => {
+  const { user } = props;
+
+  return <div>
+    <div>{user.gender}</div>
+    <div>{user.name.title} {user.name.first} {user.name.last}</div>
+    <hr />
+  </div>;
+};
+
+export default function Contacts() {
   const [users, setUsers] = useState([]);
-    useEffect(() => {
-        const url = "https://random-data-api.com/api/users/random_user";
+  useEffect(() => {
+    const url = "https://randomuser.me/api/?results=5";
 
-        const fetchData = async () => {
-            try {
-                const response = await fetch(url);
-                const json = await response.json();
-                console.log(json);
-                setUsers(json);
-            } catch (error) {
-                console.log("error", error);
-            }
-        };
-
-        fetchData();
-    }, []);
-
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        const json = await response.json();
+        const { results } = json;
+        // Only put the results in state, ie, the actual users array
+        setUsers(results);
+      } catch (error) {
+        console.log("error", error);
+      }
+    };
+    fetchData();
+  }, []);
   // for dialog (modal)
   const [displayResponsive, setDisplayResponsive] = useState(false);
 
@@ -43,8 +52,6 @@ const Contacts = () => {
   };
   return (
     <>
-     {/* <Card>{users}</Card> */}
-
       <div className="card">
         <div className="p-fluid grid">
           <div className="field searchbox">
@@ -111,8 +118,13 @@ const Contacts = () => {
           </div>
         </Dialog>
       </div>
+      <div>
+        {users.map((user) => (
+           <Carp key={user.email} user={user} />
+        ))}
+      </div>
     </>
   );
-};
+}
 
-export default Contacts;
+// export default Contacts;

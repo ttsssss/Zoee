@@ -32,8 +32,8 @@ export default function Contacts() {
   const filteredUsers =
     search.length === 0
       ? users
-      : users.filter((user) =>
-          user.name.first.toLowerCase().includes(search.toLowerCase())
+      : users.filter((users) =>
+          users.name.first.toLowerCase().includes(search.toLowerCase())
         );
 
   // for dialog (modal)
@@ -121,22 +121,22 @@ export default function Contacts() {
         </Dialog>
       </div>
       <div>
-        {users.map((user) => (
+        {users.map((users) => (
           <Button
             className="p-button-raised p-button-plain p-button-text"
-            key={user.email}
-            user={user}
+            key={users.email}
+            users={users}
             style={{ width: "17rem", height: "15rem", margin: ".5em" }}
           >
             <div className="textcard">
-              {user.name.first} {user.name.last} <br /> {user.email}
+              {users.name.first} {users.name.last} <br /> {users.email}
             </div>
           </Button>
         ))}
         <div>
           <Button
             className="p-button-raised p-button-plain p-button-text"
-            user={filteredUsers}
+            users={filteredUsers}
           ></Button>
         </div>
       </div>

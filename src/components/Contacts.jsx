@@ -113,8 +113,6 @@ export default function Contacts() {
         {users.map((user) => (
           <Button className="p-button-raised p-button-plain p-button-text" key={user.email} user={user} style={{ width: '17rem', height: '15rem', margin: '.5em' }}>
             <div>{user.name.first} {user.name.last} <br /> {user.email}</div>
-            <div>  </div>
-            <div></div>
           </Button>
         ))}
       </div>

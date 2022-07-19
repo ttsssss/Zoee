@@ -82,3 +82,9 @@ body {
 /* @media all and (max-width: 500px) {
 
 } */
+
+.p-card:hover{
+  /* display: grid;
+  grid-template-columns: repeat(3, 200px); */
+  border-color: #6366F1 !important;
+}

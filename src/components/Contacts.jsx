@@ -6,17 +6,8 @@ import "primereact/resources/primereact.min.css"; //core css
 import "primeicons/primeicons.css"; //icons
 import { Button } from "primereact/button";
 import { Dialog } from "primereact/dialog"; //same thing as a modal
-import { Card } from "primereact/card";
+// import { Card } from "primereact/card";
 
-// const Carp = (props) => {
-//   const { user } = props;
-
-//   return <div>
-//     <div>{user.gender}</div>
-//     <div>{user.name.title} {user.name.first} {user.name.last}</div>
-//     <hr />
-//   </div>;
-// };
 
 export default function Contacts() {
   const [users, setUsers] = useState([]);
@@ -120,12 +111,16 @@ export default function Contacts() {
       </div>
       <div>
         {users.map((user) => (
-          <Card key={user.email} user={user} style={{ width: '25rem', marginBottom: '2em' }}>
+          <Button className="p-button-raised p-button-plain p-button-text" key={user.email} user={user} style={{ width: '14rem', height: '14rem', marginBottom: '1em' }}>
             <div>
-              {user.name.title} {user.name.first} {user.name.last}
+              {/* {user.name.title} */}
             </div>
-            <div> {user.email}</div>
-          </Card>
+            <div>{user.name.first}{'\n'}{user.name.last}</div>
+            <div>
+            {'\n'}
+              {user.email}
+            </div>
+          </Button>
         ))}
       </div>
     </>

@@ -111,15 +111,10 @@ export default function Contacts() {
       </div>
       <div>
         {users.map((user) => (
-          <Button className="p-button-raised p-button-plain p-button-text" key={user.email} user={user} style={{ width: '14rem', height: '14rem', marginBottom: '1em' }}>
-            <div>
-              {/* {user.name.title} */}
-            </div>
-            <div>{user.name.first}{'\n'}{user.name.last}</div>
-            <div>
-            {'\n'}
-              {user.email}
-            </div>
+          <Button className="p-button-raised p-button-plain p-button-text" key={user.email} user={user} style={{ width: '17rem', height: '15rem', margin: '.5em' }}>
+            <div>{user.name.first} {user.name.last} <br /> {user.email}</div>
+            <div>  </div>
+            <div></div>
           </Button>
         ))}
       </div>

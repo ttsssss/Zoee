@@ -83,8 +83,9 @@ body {
 
 } */
 
-.p-card:hover{
-  /* display: grid;
-  grid-template-columns: repeat(3, 200px); */
-  border-color: #6366F1 !important;
+.textcard {
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+  text-align: center !important;
 }

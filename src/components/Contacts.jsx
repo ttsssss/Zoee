@@ -8,9 +8,10 @@ import { Button } from "primereact/button";
 import { Dialog } from "primereact/dialog"; //same thing as a modal
 // import { Card } from "primereact/card";
 
-
 export default function Contacts() {
   const [users, setUsers] = useState([]);
+  const [search, setSearch] = useState("");
+
   useEffect(() => {
     const url = "https://randomuser.me/api/?results=20";
 
@@ -27,6 +28,14 @@ export default function Contacts() {
     };
     fetchData();
   }, []);
+
+  const filteredUsers =
+    search.length === 0
+      ? users
+      : users.filter((user) =>
+          user.name.first.toLowerCase().includes(search.toLowerCase())
+        );
+
   // for dialog (modal)
   const [displayResponsive, setDisplayResponsive] = useState(false);
 
@@ -49,8 +58,10 @@ export default function Contacts() {
             <span className="p-float-label p-input-icon-left">
               <i className="pi pi-search" />
               <InputText
+                type="text"
                 className="contact-search"
-                // id="lefticon" value={value2} onChange={(e) => setValue2(e.target.value)}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
               />
               <label htmlFor="lefticon">Search for contact</label>
             </span>
@@ -111,10 +122,23 @@ export default function Contacts() {
       </div>
       <div>
         {users.map((user) => (
-          <Button className="p-button-raised p-button-plain p-button-text" key={user.email} user={user} style={{ width: '17rem', height: '15rem', margin: '.5em' }}>
-            <div>{user.name.first} {user.name.last} <br /> {user.email}</div>
+          <Button
+            className="p-button-raised p-button-plain p-button-text"
+            key={user.email}
+            user={user}
+            style={{ width: "17rem", height: "15rem", margin: ".5em" }}
+          >
+            <div className="textcard">
+              {user.name.first} {user.name.last} <br /> {user.email}
+            </div>
           </Button>
         ))}
+        <div>
+          <Button
+            className="p-button-raised p-button-plain p-button-text"
+            user={filteredUsers}
+          ></Button>
+        </div>
       </div>
     </>
   );

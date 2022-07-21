@@ -9,8 +9,9 @@ import { Dialog } from "primereact/dialog"; //same thing as a modal
 // import { Card } from "primereact/card";
 
 export default function Contacts() {
-  const [users, setUsers] = useState([]);
-  const [search, setSearch] = useState("");
+  const [APIData, setAPIData] = useState([]);
+  const [filteredResults, setFilteredResults] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
     const url = "https://randomuser.me/api/?results=20";
@@ -21,7 +22,7 @@ export default function Contacts() {
         const json = await response.json();
         const { results } = json;
         // Only put the results in state, ie, the actual users array
-        setUsers(results);
+        setAPIData(results);
       } catch (error) {
         console.log("error", error);
       }
@@ -29,12 +30,20 @@ export default function Contacts() {
     fetchData();
   }, []);
 
-  const filteredUsers =
-    search.length === 0
-      ? users
-      : users.filter((users) =>
-          users.name.first.toLowerCase().includes(search.toLowerCase())
-        );
+  const searchItems = (searchValue) => {
+    setSearchInput(searchValue);
+    if (searchInput !== "") {
+      const filteredData = APIData.filter((item) => {
+        return Object.values(item)
+          .join("")
+          .toLowerCase()
+          .includes(searchInput.toLowerCase());
+      });
+      setFilteredResults(filteredData);
+    } else {
+      setFilteredResults(APIData);
+    }
+  };
 
   // for dialog (modal)
   const [displayResponsive, setDisplayResponsive] = useState(false);
@@ -60,8 +69,7 @@ export default function Contacts() {
               <InputText
                 type="text"
                 className="contact-search"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
+                onChange={(e) => searchItems(e.target.value)}
               />
               <label htmlFor="lefticon">Search for contact</label>
             </span>
@@ -83,20 +91,15 @@ export default function Contacts() {
           onHide={() => onHide("displayResponsive")}
           breakpoints={{ "960px": "75vw" }}
           style={{ width: "700px", height: "400px" }}
-          //   footer={renderFooter("displayResponsive")}
         >
           <h5>Details</h5>
           <div className="text-input">
             <InputText
-              // value={project_name}
-              // onChange={(e) => setProjectName(e.target.value)}
               style={{ width: "315px" }}
               type="text"
               placeholder="First Name"
             ></InputText>
             <InputText
-              // value={project_name}
-              // onChange={(e) => setProjectName(e.target.value)}
               style={{ width: "315px" }}
               type="text"
               placeholder="Last Name"
@@ -106,42 +109,43 @@ export default function Contacts() {
           <div>
             <InputText
               className="text-input2"
-              // value={project_name}
-              // onChange={(e) => setProjectName(e.target.value)}
               style={{ width: "640px" }}
               type="text"
               placeholder="Email"
-            ></InputText>{" "}
+            ></InputText>
             <Button
               className="btn-color create-btn"
               label="Create"
-              //   onClick={() => onClick("displayResponsive")}
             />
           </div>
         </Dialog>
       </div>
       <div>
-        {users.map((users) => (
-          <Button
-            className="p-button-raised p-button-plain p-button-text"
-            key={users.email}
-            users={users}
-            style={{ width: "17rem", height: "15rem", margin: ".5em" }}
-          >
-            <div className="textcard">
-              {users.name.first} {users.name.last} <br /> {users.email}
-            </div>
-          </Button>
-        ))}
-        <div>
-          <Button
-            className="p-button-raised p-button-plain p-button-text"
-            users={filteredUsers}
-          ></Button>
-        </div>
+          {searchInput.length > 1
+            ? filteredResults.map((item) => {
+                return (
+                  <Button className="p-button-raised p-button-plain p-button-text"
+                  style={{ width: "17rem", height: "15rem", margin: ".5em" }}
+                  >
+                    <div className="textcard">
+                    {item.name.first} {item.name.last}<br/>{item.email}
+                    </div>
+                  </Button>
+                );
+              })
+            : APIData.map((item) => {
+                return (
+                  <Button
+                  className="p-button-raised p-button-plain p-button-text"
+                  style={{ width: "17rem", height: "15rem", margin: ".5em" }}
+                  >
+                    <div className="textcard">
+                    {item.name.first} {item.name.last}<br/>{item.email}
+                    </div>
+                  </Button>
+                );
+              })}
       </div>
     </>
   );
 }
-
-// export default Contacts;

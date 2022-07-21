@@ -113,40 +113,46 @@ export default function Contacts() {
               type="text"
               placeholder="Email"
             ></InputText>
-            <Button
-              className="btn-color create-btn"
-              label="Create"
-            />
+            <Button className="btn-color create-btn" label="Create" />
           </div>
         </Dialog>
       </div>
       <div>
-          {searchInput.length > 1
-            ? filteredResults.map((item) => {
-                return (
-                  <Button className="p-button-raised p-button-plain p-button-text"
-                  style={{ width: "17rem", height: "15rem", margin: ".5em" }}
-                  >
-                    <div className="textcard">
-                    <img src={item.picture.thumbnail} alt="Profile Picture"/>
-                    {item.name.first} {item.name.last}<br/>{item.email}
-                    </div>
-                  </Button>
-                );
-              })
-            : APIData.map((item) => {
-                return (
-                  <Button
+        {searchInput.length > 1
+          ? filteredResults.map((item) => {
+              return (
+                <Button
                   className="p-button-raised p-button-plain p-button-text"
                   style={{ width: "17rem", height: "15rem", margin: ".5em" }}
-                  >
-                    <div className="textcard">
-                   <img className="profilepic" src={item.picture.thumbnail} alt="Profile Picture"/>
-                    {item.name.first} {item.name.last}<br/>{item.email}
-                    </div>
-                  </Button>
-                );
-              })}
+                >
+                  <div className="textcard">
+                    <img src={item.picture.thumbnail} alt="Profile Picture" />
+                    {item.name.first} {item.name.last}
+                    <br />
+                    {item.email}
+                  </div>
+                </Button>
+              );
+            })
+          : APIData.map((item) => {
+              return (
+                <Button
+                  className="p-button-raised p-button-plain p-button-text"
+                  style={{ width: "17rem", height: "15rem", margin: ".5em" }}
+                >
+                  <div className="textcard">
+                    <img
+                      className="profilepic"
+                      src={item.picture.thumbnail}
+                      alt="Profile Picture"
+                    />
+                    {item.name.first} {item.name.last}
+                    <br />
+                    {item.email}
+                  </div>
+                </Button>
+              );
+            })}
       </div>
     </>
   );

@@ -89,3 +89,8 @@ body {
   padding: 0px;
   text-align: center !important;
 }
+
+.profilepic {
+  display: flex;
+  justify-content: center;
+}

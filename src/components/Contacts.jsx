@@ -128,6 +128,7 @@ export default function Contacts() {
                   style={{ width: "17rem", height: "15rem", margin: ".5em" }}
                   >
                     <div className="textcard">
+                    <img src={item.picture.thumbnail} alt="Profile Picture"/>
                     {item.name.first} {item.name.last}<br/>{item.email}
                     </div>
                   </Button>
@@ -140,6 +141,7 @@ export default function Contacts() {
                   style={{ width: "17rem", height: "15rem", margin: ".5em" }}
                   >
                     <div className="textcard">
+                   <img className="profilepic" src={item.picture.thumbnail} alt="Profile Picture"/>
                     {item.name.first} {item.name.last}<br/>{item.email}
                     </div>
                   </Button>
